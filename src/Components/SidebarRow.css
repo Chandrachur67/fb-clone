@@ -1,0 +1,22 @@
+.sidebarRow {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sidebarRow > * {
+    margin-right: 10px;
+}
+
+.sidebarRow>.MuiSvgIcon-root {
+    font-size: xx-large;
+    color: #2e81f4;
+}
+
+.sidebarRow:hover {
+    background-color: #c9cfda;
+}

@@ -1,0 +1,33 @@
+.story {
+    width: 150px;
+    height: 230px;
+    border-radius: 10px;
+    position: relative;
+    background-color: black;
+    cursor: pointer;
+}
+
+
+.story__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center ;
+    border-radius: inherit;
+    position: absolute;
+    opacity: 0.8;
+}
+
+.story__avatar {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    border: 2px solid rgb(63, 116, 238);
+}
+
+.story__name {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+    color: white;
+}

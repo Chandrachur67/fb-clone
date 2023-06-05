@@ -1,0 +1,14 @@
+
+
+.app__body {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 20px;
+    /* margin: 10px 0; */
+}
+
+
+

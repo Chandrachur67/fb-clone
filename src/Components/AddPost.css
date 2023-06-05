@@ -1,0 +1,83 @@
+.addPost {
+    background-color: white;
+    flex-grow: 1;
+    margin: 15px 0;
+    box-shadow: 2px 2px 5px -1px #90949c;
+
+    border-radius: 7px;
+}
+
+.addPost__top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #e9ebee;
+    padding: 10px;
+}
+
+.addPost__input {
+    flex-grow: 5;
+    background-color: #e9ebee;
+    border-radius: 999px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.addPost__input-box {
+    background-color: #e9ebee;
+    border: 0;
+    border-radius: inherit;
+    flex-grow: 2;
+    padding: 0 10px;
+}
+
+.addPost__input-box:focus {
+    outline: 0;
+}
+
+.addPost__input-file {
+    cursor: pointer;
+}
+
+.addPost__top>input {
+    width: 85px;
+}
+
+.addPost__top>button {
+    /* height: 0;
+    width: 0;
+    background: transparent;
+    display: none; */
+    border-radius: 5px;
+    height: 30px;
+    padding: 10px;
+    margin: auto;
+
+}
+
+.messageSender__button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.messageSender__option {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.messageSender__option:hover {
+    background-color: #e9ebee;
+}
+
+.messageSender__option>p {
+    margin-left: 5px;
+}
