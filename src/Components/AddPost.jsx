@@ -25,7 +25,29 @@ function AddPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPosting(prev => !prev);
-    // TODO: create provision for create post with only text
+    if (text === "" && image == null) {
+      console.log("Post cant be empty !!")
+      setPosting(prev => !prev);
+      return;
+    }
+    if (image == null) {
+      try {
+        const docRef = await addDoc(collection(db, "posts"), {
+          postText: text,
+          postImage: null,
+          creatorName: currentUser.displayName,
+          creatorImage: currentUser.photoURL,
+          creator: currentUser.uid,
+          timeStamp: Date.now()
+        });
+        console.log("Document written with ID: ", docRef.id);
+        setText("");
+        setPosting(prev => !prev);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+
     const storageRef = ref(storage, `images/${image.name}`);
 
     const uploadTask = uploadBytesResumable(storageRef, image);

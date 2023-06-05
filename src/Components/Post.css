@@ -6,9 +6,27 @@
 }
 
 .post__heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__heading-left {
     padding: 10px;
     display: flex;
 }
+
+.post__heading-right {
+    /* border-radius: 50%; */
+    cursor: pointer;
+    align-self: center;
+    padding: 1px;
+    margin-right: 5px;
+}
+
+/* .post__heading-right:hover,
+.post__heading-right:active {
+    background-color: #bbbcbe;
+} */
 
 .post__heading-details {
     margin-left: 10px;
