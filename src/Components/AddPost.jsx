@@ -38,7 +38,8 @@ function AddPost() {
           creatorName: currentUser.displayName,
           creatorImage: currentUser.photoURL,
           creator: currentUser.uid,
-          timeStamp: Date.now()
+          timeStamp: Date.now(),
+          likedBy: []
         });
         console.log("Document written with ID: ", docRef.id);
         setText("");
@@ -81,7 +82,8 @@ function AddPost() {
               creatorName: currentUser.displayName,
               creatorImage: currentUser.photoURL,
               creator: currentUser.uid,
-              timeStamp: Date.now()
+              timeStamp: Date.now(),
+              likedBy: [1]
             });
             console.log("Document written with ID: ", docRef.id);
             setText("");

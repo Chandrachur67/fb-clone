@@ -16,7 +16,7 @@ import { IconButton } from '@mui/material';
 
 
 import { AuthContext } from '../Auth';
-import { doc, deleteDoc } from "firebase/firestore"
+import { doc, deleteDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore"
 import { db } from '../../firebaseConfig';
 
 import "./Post.css"
@@ -24,10 +24,39 @@ import "./Post.css"
 function Post(props) {
   const [open, setOpen] = useState(false);
   const { data } = props;
-  console.log(data)
+  // console.log(data)
   const date = new Date(data.timeStamp).toDateString();
-
   const { currentUser } = useContext(AuthContext);
+
+  // console.log(data.likedBy);
+
+  const [isLiked, setIsLiked] = useState(data.likedBy?.includes(currentUser.uid));
+
+  const toggleLike = async () => {
+    console.log("trying");
+    setIsLiked(prev => !prev);
+    const postRef = doc(db, "posts", data.id);
+    if (isLiked) {
+      updateDoc(postRef, {
+        likedBy: arrayRemove(currentUser.uid)
+      }).then(() => {
+        console.log("like Removed")
+      }).catch((e) => {
+        clg(e)
+      })
+    } else {
+      // props.likedBy.push(currentUser.uid);
+      // setIsLiked(prev => !prev);
+      updateDoc(postRef, {
+        likedBy: arrayUnion(currentUser.uid)
+      }).then(() => {
+        console.log("like added")
+      }).catch((e) => {
+        clg(e)
+      })
+    }
+  }
+
 
   const handleDelete = () => {
     const postRef = doc(db, "posts", data.id);
@@ -105,8 +134,14 @@ function Post(props) {
       </div>
       <div className="react">
         <div className="like react-comp">
-          <ThumbUpIcon />
-          <p>Like</p>
+          <Button onClick={toggleLike}>
+            {isLiked ?
+              < ThumbUpIcon sx={{ color: "#4267b3" }} />
+              :
+              < ThumbUpIcon sx={{ color: "#61666c" }} />
+            }
+            <p className={isLiked ? "liked" : "notLiked"}>Like</p>
+          </Button>
         </div>
         <div className="comment react-comp">
           <CommentIcon />

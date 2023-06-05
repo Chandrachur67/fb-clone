@@ -34,6 +34,7 @@ function Feed() {
         allPosts.push({ id: doc.id, ...doc.data() });
       });
       allPosts.sort(function (a, b) { return b.timeStamp - a.timeStamp });
+      // console.log(allPosts)
       setPosts(allPosts);
     })
   }, [])

@@ -60,7 +60,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -142,11 +143,12 @@ h3 span {
     align-items: center;
     height: 40px;
     gap: 10px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 .post .dropdown-menu ul li:hover {
-    color: rgb(212, 33, 9);
+    /* color: rgb(212, 33, 9); */
+    background-color: #e9ebee;
     cursor: pointer;
 }
 
@@ -171,4 +173,16 @@ h3 span {
     max-width: 100px;
     margin-left: 10px;
     transition: 0.2s;
+}
+
+.liked {
+    color: #4267b3;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.notLiked {
+    color: #61666c;
+    font-weight: bold;
+    margin-left: 5px;
 }
