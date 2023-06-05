@@ -8,6 +8,8 @@
 .post__heading {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+
 }
 
 .post__heading-left {
@@ -18,9 +20,9 @@
 .post__heading-right {
     /* border-radius: 50%; */
     cursor: pointer;
-    align-self: center;
+    /* align-self: center;
     padding: 1px;
-    margin-right: 5px;
+    margin-right: 5px; */
 }
 
 /* .post__heading-right:hover,
@@ -69,4 +71,104 @@
 .react-comp:hover {
     background-color: #e9ebee;
     border-radius: 5px;
+}
+
+.post .menu-container {
+    position: relative;
+}
+
+.post .menu-trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.post .dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    background-color: #fff;
+    border-radius: 6px;
+    /* border: 2px solid black; */
+    box-shadow: 3px 3px 15px gray;
+    /* padding: 10px 20px;
+    width: 250px; */
+}
+
+.post .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.post .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.2s ease;
+}
+
+.dropdown-menu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.2s ease;
+}
+
+/* h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--primary-text-color);
+    line-height: 1.2rem;
+}
+
+h3 span {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    font-weight: 400;
+} */
+
+.post .dropdown-menu ul li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 10px;
+    border-bottom: 1px solid black;
+}
+
+.post .dropdown-menu ul li:hover {
+    color: rgb(212, 33, 9);
+    cursor: pointer;
+}
+
+.post .dropdown-menu ul li:hover img {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.post .dropdownItem {
+    display: flex;
+    margin: 5px auto;
+}
+
+/* .dropdownItem img {
+    max-width: 50px;
+    margin-right: 10px;
+    opacity: 1;
+    transition: .2s ease;
+} */
+
+.post .dropdownItem p {
+    max-width: 100px;
+    margin-left: 10px;
+    transition: 0.2s;
 }

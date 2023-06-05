@@ -112,7 +112,7 @@
     top: 70px;
     right: 10px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 6px;
     /* border: 2px solid black; */
     box-shadow: 3px 3px 15px gray;
     padding: 10px 20px;
@@ -166,6 +166,7 @@ h3 span {
     align-items: center;
     height: 40px;
     gap: 10px;
+    border-bottom: 1px solid black;
 }
 
 .dropdown-menu ul li:hover {

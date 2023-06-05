@@ -11,6 +11,7 @@ import AddIcon from '@mui/icons-material/Add';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { IconButton } from '@mui/material';
 
@@ -107,7 +108,11 @@ function Header() {
                 <div className='menu-container' ref={menuRef}>
                     <div className='menu-trigger' onClick={() => { setOpen(!open) }}>
                         <IconButton >
-                            <KeyboardArrowDownIcon />
+                            {open ?
+                                <KeyboardArrowUpIcon />
+                                :
+                                <KeyboardArrowDownIcon />
+                            }
                         </IconButton>
                     </div>
 
